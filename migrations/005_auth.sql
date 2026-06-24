@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS user_access_grants (
 INSERT INTO users (email, password_hash, first_name, last_name, role)
 VALUES (
   'admin@localhost',
-  '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+  '$2b$10$ahHPDyqX9q7B3RtudpzwaemSIhPphYFkc6/b8kCf.HRhi1LNGILuC',
   'Admin',
   'User',
   'superadmin'
