@@ -37,14 +37,14 @@ for file in "$SCRIPT_DIR/migrations/"*.sql; do
 
   if [[ "$already" -gt 0 ]]; then
     echo "[migrate] skip  $name (already applied)"
-    ((SKIPPED++))
+    SKIPPED=$((SKIPPED + 1))
     continue
   fi
 
   echo "[migrate] apply $name ..."
   $PSQL -f "$file"
   $PSQL -c "INSERT INTO schema_migrations (filename) VALUES ('$name');"
-  ((APPLIED++))
+  APPLIED=$((APPLIED + 1))
 done
 
 echo "[migrate] Done. Applied: $APPLIED  Skipped: $SKIPPED"
